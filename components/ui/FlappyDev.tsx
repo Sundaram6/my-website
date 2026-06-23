@@ -22,7 +22,7 @@ export function FlappyDev({ onClose }: { onClose: () => void }) {
     const PIPE_WIDTH = 80;
     const GAP_SIZE = 170;
     
-    let bird = { x: 150, y: 300, velocity: 0, size: 30 };
+    let bird = { x: 150, y: 300, velocity: gameState === "playing" ? JUMP : 0, size: 30 };
     let pipes: { x: number, topHeight: number, label: string, color: string, passed: boolean }[] = [];
     let currentScore = 0;
     let frame = 0;
@@ -57,8 +57,18 @@ export function FlappyDev({ onClose }: { onClose: () => void }) {
       frame = 0;
     }
 
-    function draw() {
+    let lastTime = 0;
+
+    function draw(time: number) {
       if (!ctx || !canvas) return;
+
+      if (time - lastTime < 16) {
+        if (gameState === "playing" || gameState === "start") {
+          animationFrameId = requestAnimationFrame(draw);
+        }
+        return;
+      }
+      lastTime = time;
 
       // Clear
       ctx.fillStyle = "#0f172a"; // dark slate background
@@ -140,14 +150,12 @@ export function FlappyDev({ onClose }: { onClose: () => void }) {
       ctx.textBaseline = "middle";
       ctx.fillText("👨‍💻", bird.x, bird.y);
 
-      if (gameState === "playing") {
-        animationFrameId = requestAnimationFrame(draw);
-      } else if (gameState === "start") {
+      if (gameState === "playing" || gameState === "start") {
         animationFrameId = requestAnimationFrame(draw);
       }
     }
 
-    draw();
+    draw(performance.now());
 
     const handleInput = (e: KeyboardEvent | MouseEvent | TouchEvent) => {
       if (e.type === "keydown" && (e as KeyboardEvent).code !== "Space") return;

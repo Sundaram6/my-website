@@ -5,9 +5,6 @@
 @tailwind utilities;
 
 @layer base {
-  .light body {
-    @apply bg-slate-50 text-slate-900;
-  }
   .light .text-slate-400 {
     @apply text-slate-600;
   }
@@ -30,8 +27,6 @@ html {
 }
 
 body {
-  background: #0d0d0d;
-  color: #ffffff;
   font-family: var(--font-inter), "Inter", sans-serif;
   overflow-x: hidden;
 }

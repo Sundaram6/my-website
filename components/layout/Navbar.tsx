@@ -69,9 +69,9 @@ export default function Navbar() {
           </Link>
           <Link
             href="/#contact"
-            className="bg-gradient-to-r from-brand-primary to-brand-accent text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-lg shadow-orange-500/20"
+            className="bg-gradient-to-r from-brand-primary to-brand-accent text-white text-sm font-bold uppercase px-5 py-2.5 rounded-lg hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-lg shadow-orange-500/20"
           >
-            Hire Me
+            HIRE ME
           </Link>
         </div>
 

@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-navy text-white antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-slate-50 text-slate-900 dark:bg-navy dark:text-white antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navbar />
