@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTypingEffect } from "@/hooks/useTypingEffect";
+import Hero3D from "./Hero3D";
 
 const phrases = ["with AI.", "for Scale.", "that Matters.", "at Speed."];
 const stats = [
@@ -16,10 +17,8 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-6 pt-32 pb-20">
-      {/* Radial glow */}
-      <div className="absolute w-[800px] h-[800px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle,rgba(255,157,102,0.12) 0%,rgba(255,179,128,0.06) 40%,transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%,-50%)", animation: "pulse 4s ease-in-out infinite" }}
-      />
+      {/* 3D Background */}
+      <Hero3D />
 
       <div className="text-center relative z-10 max-w-4xl mx-auto">
         <motion.div
