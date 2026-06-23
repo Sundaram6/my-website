@@ -22,12 +22,12 @@ export default function Process() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -4 }}
-              className="glass border border-white/8 hover:border-orange-500/30 rounded-2xl p-8 relative overflow-hidden transition-all group"
+              className="glass border hover:border-orange-500/30 rounded-2xl p-8 relative overflow-hidden transition-all group"
             >
-              <span className="absolute -top-4 right-5 font-mono font-black text-[5rem] leading-none text-brand-blue/[0.06] pointer-events-none select-none">
+              <span className="absolute -top-4 right-5 font-mono font-black text-[5rem] leading-none text-brand-primary/[0.06] pointer-events-none select-none">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 border border-orange-500/20 flex items-center justify-center text-2xl mb-5">{s.icon}</div>
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-primary/15 to-brand-accent/15 border border-orange-500/20 flex items-center justify-center text-2xl mb-5">{s.icon}</div>
               <h3 className="text-[1.05rem] font-bold mb-2">{s.title}</h3>
               <p className="text-slate-400 text-[0.875rem] leading-relaxed">{s.desc}</p>
             </motion.div>

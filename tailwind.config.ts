@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,19 +16,19 @@ const config: Config = {
           3: "#2a2a2a",
         },
         brand: {
-          blue: "#ff9d66",
-          blue2: "#ffb380",
-          blue3: "#ffc699",
-          purple: "#ff9d66",
-          purple2: "#ffb380",
-          purple3: "#ffc699",
-          cyan: "#ff9d66",
-          cyan2: "#ffb380",
+          primary: "#ff9d66",
+          primary2: "#ffb380",
+          primary3: "#ffc699",
+          accent: "#ff9d66",
+          accent2: "#ffb380",
+          accent3: "#ffc699",
+          highlight: "#ff9d66",
+          highlight2: "#ffb380",
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["var(--font-inter)", "Inter", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "JetBrains Mono", "monospace"],
       },
       backgroundImage: {
         "gradient-brand":

@@ -6,9 +6,9 @@ import { projects } from "@/data/projects";
 
 const tagColors: Record<string, string> = {
   ai:   "bg-cyan-500/10 border-cyan-500/20 text-cyan-300",
-  saas: "bg-brand-blue/10 border-brand-blue/20 text-brand-blue2",
-  web:  "bg-brand-purple/10 border-brand-purple/20 text-brand-purple3",
-  auto: "bg-brand-purple/10 border-brand-purple/20 text-brand-purple3",
+  saas: "bg-brand-primary/10 border-brand-primary/20 text-brand-primary2",
+  web:  "bg-brand-accent/10 border-brand-accent/20 text-brand-accent3",
+  auto: "bg-brand-accent/10 border-brand-accent/20 text-brand-accent3",
 };
 
 export default function Projects() {
@@ -30,10 +30,10 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -5 }}
-              className="glass border border-white/8 hover:border-orange-500/40 rounded-2xl overflow-hidden transition-shadow hover:shadow-[0_20px_50px_rgba(255,157,102,0.15)] relative group"
+              className="glass border hover:border-orange-500/40 rounded-2xl overflow-hidden transition-shadow hover:shadow-[0_20px_50px_rgba(255,157,102,0.15)] relative group"
             >
               {p.featured && (
-                <span className="absolute top-4 right-4 z-10 bg-gradient-to-r from-brand-blue to-brand-purple text-white text-[0.65rem] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full">
+                <span className="absolute top-4 right-4 z-10 bg-gradient-to-r from-brand-primary to-brand-accent text-white text-[0.65rem] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full">
                   Featured
                 </span>
               )}
@@ -51,7 +51,7 @@ export default function Projects() {
                 <div className="flex gap-5">
                   {p.links.map((l) => (
                     <Link key={l.label} href={l.href} target="_blank"
-                      className="inline-flex items-center gap-1.5 text-[0.8rem] font-semibold text-brand-blue2 hover:text-brand-blue3 transition-colors">
+                      className="inline-flex items-center gap-1.5 text-[0.8rem] font-semibold text-brand-primary2 hover:text-brand-primary3 transition-colors">
                       {l.label}
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path d="M7 17L17 7M7 7h10v10" />

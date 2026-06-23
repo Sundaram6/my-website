@@ -7,10 +7,10 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { GradientText } from "@/components/ui/GradientText";
 
 const socials = [
-  { icon: "📧", label: "alex@example.com",              href: "mailto:alex@example.com" },
-  { icon: "🐙", label: "github.com/alexcarter",         href: "https://github.com" },
-  { icon: "💼", label: "linkedin.com/in/alexcarter",    href: "https://linkedin.com" },
-  { icon: "✖",  label: "@alexcarter_dev",               href: "https://twitter.com" },
+  { icon: "📧", label: "sundaram.dev@gmail.com",          href: "mailto:sundaram.dev@gmail.com" },
+  { icon: "🐙", label: "github.com/Sundaram6",                href: "https://github.com/Sundaram6" },
+  { icon: "💼", label: "linkedin.com/in/sundaram-sharma", href: "https://linkedin.com/in/sundaram-sharma" },
+  { icon: "✖",  label: "@sundaram_dev",                   href: "https://twitter.com/sundaram_dev" },
 ];
 
 export default function Contact() {
@@ -45,8 +45,8 @@ export default function Contact() {
             <div className="flex flex-col gap-3">
               {socials.map((s) => (
                 <Link key={s.label} href={s.href} target="_blank"
-                  className="flex items-center gap-4 glass border border-white/8 hover:border-orange-500/30 rounded-xl px-5 py-4 text-slate-400 hover:text-white hover:translate-x-1 transition-all group">
-                  <span className="w-9 h-9 bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 rounded-lg flex items-center justify-center text-base">{s.icon}</span>
+                  className="flex items-center gap-4 glass border hover:border-orange-500/30 rounded-xl px-5 py-4 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:translate-x-1 transition-all group">
+                  <span className="w-9 h-9 bg-gradient-to-br from-brand-primary/15 to-brand-accent/15 rounded-lg flex items-center justify-center text-base">{s.icon}</span>
                   <span className="text-[0.875rem] font-medium">{s.label}</span>
                 </Link>
               ))}
@@ -62,13 +62,13 @@ export default function Contact() {
                   <div key={label} className="mb-5">
                     <label className="block text-[0.75rem] font-semibold text-slate-400 uppercase tracking-widest mb-2">{label}</label>
                     <input type={type} placeholder={ph}
-                      className="w-full bg-white/[0.04] border border-white/8 focus:border-brand-blue focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-white outline-none transition-all placeholder:text-slate-600" />
+                      className="w-full bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600" />
                   </div>
                 );
               })}
               <div className="mb-5">
                 <label className="block text-[0.75rem] font-semibold text-slate-400 uppercase tracking-widest mb-2">Project Type</label>
-                <select className="w-full bg-[#1a1a1a] border border-white/8 focus:border-brand-blue rounded-lg px-4 py-3.5 text-[0.9rem] text-white outline-none transition-all">
+                <select className="w-full bg-slate-50 dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 focus:border-brand-primary rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all">
                   {["Select a service…","AI Application","SaaS Product","Web Development","Automation System","Consulting"].map((o) => (
                     <option key={o}>{o}</option>
                   ))}
@@ -77,7 +77,7 @@ export default function Contact() {
               <div className="mb-6">
                 <label className="block text-[0.75rem] font-semibold text-slate-400 uppercase tracking-widest mb-2">Message</label>
                 <textarea rows={4} placeholder="Describe your project, goals, and timeline…"
-                  className="w-full bg-white/[0.04] border border-white/8 focus:border-brand-blue focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-white outline-none transition-all resize-y placeholder:text-slate-600" />
+                  className="w-full bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all resize-y placeholder:text-slate-400 dark:placeholder:text-slate-600" />
               </div>
               <button
                 onClick={handleSubmit}
@@ -85,7 +85,7 @@ export default function Contact() {
                 className={`w-full py-4 rounded-xl font-bold text-[0.95rem] tracking-wide transition-all ${
                   status === "sent"
                     ? "bg-gradient-to-r from-green-500 to-emerald-500"
-                    : "bg-gradient-to-r from-brand-blue to-brand-purple hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(255,157,102,0.35)]"
+                    : "bg-gradient-to-r from-brand-primary to-brand-accent hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(255,157,102,0.35)]"
                 } text-white disabled:cursor-not-allowed`}
               >
                 {status === "idle" && "Send Message →"}

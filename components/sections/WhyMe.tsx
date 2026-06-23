@@ -18,7 +18,7 @@ export default function WhyMe() {
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <SectionLabel>Why Work With Me</SectionLabel>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight mb-3">The Alex Advantage</h2>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight mb-3">The Sundaram Advantage</h2>
           <p className="text-slate-400 text-[1.05rem] max-w-lg">What sets me apart — and why founders and teams keep coming back.</p>
         </motion.div>
 
@@ -31,7 +31,7 @@ export default function WhyMe() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -4, boxShadow: "0 0 60px rgba(255,157,102,0.15)" }}
-              className="glass border border-white/8 hover:border-indigo-500/30 rounded-2xl p-8 transition-all"
+              className="glass border hover:border-indigo-500/30 rounded-2xl p-8 transition-all"
             >
               <div className="text-3xl mb-4">{w.icon}</div>
               <h3 className="text-[1.05rem] font-bold mb-2">{w.title}</h3>
@@ -52,12 +52,12 @@ export default function WhyMe() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass border border-white/8 hover:border-indigo-500/30 rounded-2xl p-8 transition-all"
+                className="glass border hover:border-indigo-500/30 rounded-2xl p-8 transition-all"
               >
-                <div className="text-4xl text-brand-blue mb-4 leading-none">"</div>
+                <div className="text-4xl text-brand-primary mb-4 leading-none">"</div>
                 <p className="text-slate-400 text-[0.9rem] leading-relaxed italic mb-6">{t.quote}</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-blue to-brand-purple flex items-center justify-center font-bold text-sm">{t.initials}</div>
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-primary to-brand-accent flex items-center justify-center font-bold text-sm">{t.initials}</div>
                   <div>
                     <div className="text-[0.875rem] font-bold">{t.author}</div>
                     <div className="text-[0.75rem] text-slate-500">{t.role}</div>

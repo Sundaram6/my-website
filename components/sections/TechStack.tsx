@@ -22,12 +22,12 @@ export default function TechStack() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
               whileHover={{ y: -4 }}
-              className="glass border border-white/8 hover:border-orange-500/30 rounded-xl p-5 text-center cursor-default relative overflow-hidden group transition-shadow hover:shadow-[0_12px_35px_rgba(255,157,102,0.2)]"
+              className="glass border hover:border-orange-500/30 rounded-xl p-5 text-center cursor-default relative overflow-hidden group transition-shadow hover:shadow-[0_12px_35px_rgba(255,157,102,0.2)]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-brand-purple/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="text-3xl mb-2 relative">{t.icon}</div>
-              <div className="text-xs font-semibold text-slate-300 relative">{t.name}</div>
-              <div className="text-[0.65rem] text-slate-500 mt-0.5 relative">{t.cat}</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center text-xs font-bold text-white mb-2 relative mx-auto" style={{ backgroundColor: t.color }}>{t.icon}</div>
+              <div className="text-xs font-semibold text-slate-700 dark:text-slate-300 relative">{t.name}</div>
+              <div className="text-[0.65rem] text-slate-500 dark:text-slate-400 mt-0.5 relative">{t.cat}</div>
             </motion.div>
           ))}
         </div>

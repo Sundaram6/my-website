@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-white/8 py-12 text-center">
+    <footer className="relative z-10 border-t border-slate-200 dark:border-white/10 py-12 text-center">
       <p className="text-slate-500 text-sm">
         Designed &amp; built by{" "}
         <span className="gradient-text font-semibold">Sundaram Sharma</span> ·
