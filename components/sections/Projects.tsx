@@ -47,7 +47,14 @@ export default function Projects() {
                   ))}
                 </div>
                 <h3 className="text-[1.1rem] font-bold mb-2 tracking-tight">{p.title}</h3>
-                <p className="text-slate-400 text-[0.875rem] leading-relaxed mb-5">{p.desc}</p>
+                <p className="text-slate-400 text-[0.875rem] leading-relaxed mb-4">{p.desc}</p>
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {p.techStack.map((tech) => (
+                    <span key={tech} className="text-[0.6rem] font-mono font-bold bg-white/[0.04] dark:bg-white/[0.06] border border-white/10 dark:border-white/10 text-slate-500 dark:text-slate-400 px-2 py-0.5 rounded">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
                 <div className="flex gap-5">
                   {p.links.map((l) => (
                     <Link key={l.label} href={l.href} target="_blank"
