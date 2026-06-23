@@ -20,8 +20,9 @@ export default function TechStack() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
-              whileHover={{ y: -4 }}
+              animate={{ y: [0, -5, 0] }}
+              transition={{ delay: i * 0.04, duration: 3 + (i % 3) * 0.5, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ y: -8, scale: 1.05 }}
               className="glass border hover:border-orange-500/30 rounded-xl p-5 text-center cursor-default relative overflow-hidden group transition-shadow hover:shadow-[0_12px_35px_rgba(255,157,102,0.2)]"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
