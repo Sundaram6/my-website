@@ -1,15 +1,7 @@
 "use client";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 
-const Spline = dynamic(() => import("@splinetool/react-spline"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="w-12 h-12 border-2 border-brand-primary border-t-transparent rounded-full animate-spin" />
-    </div>
-  ),
-});
+const Spline = lazy(() => import("@splinetool/react-spline"));
 
 export default function Hero3D() {
   return (
