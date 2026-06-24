@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
-import Link from "next/link";
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return {};
+  return { title: `${project.title} - Case Study`, description: project.desc };
+}
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -8,8 +13,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function CaseStudyPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
@@ -75,7 +81,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <div className="flex flex-col gap-3 mt-8">
             {project.links.map((link, idx) => (
               <a
-                key={idx}
+                key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"

@@ -30,7 +30,7 @@ export const projects: Project[] = [
     role: "Lead Full Stack Engineer",
     timeline: "3 Months",
     techStack: ["GPT-4", "RAG", "Next.js 14", "PostgreSQL", "Redis"],
-    links: [{ label: "Live Demo", href: "/#projects" }, { label: "Case Study", href: "/#projects" }],
+    links: [{ label: "Live Demo", href: "/#projects" }],
   },
   {
     slug: "dataflow-etl-automation",
