@@ -21,18 +21,33 @@ export default function Contact() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
+    // Client-side Honeypot Check: silently trick the bot
+    if (data._honeypot) {
+      setStatus("sent");
+      e.currentTarget.reset();
+      setTimeout(() => setStatus("idle"), 5000);
+      return;
+    }
+
     try {
-      const response = await fetch("/api/contact", {
+      // Send directly from the client browser to avoid Vercel datacenter IP blocks (Cloudflare captchas)
+      const response = await fetch("https://formsubmit.co/ajax/sundramsharma6@gmail.com", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(data),
       });
       
-      const result = await response.json();
+      let result;
+      try {
+        result = await response.json();
+      } catch (err) {
+        result = { success: "false", message: "Failed to parse FormSubmit response." };
+      }
 
-      if (response.ok) {
+      if (response.ok && result.success !== "false" && result.success !== false) {
         setStatus("sent");
         e.currentTarget.reset();
         setTimeout(() => setStatus("idle"), 5000);
