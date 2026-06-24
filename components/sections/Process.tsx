@@ -10,7 +10,7 @@ export default function Process() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <SectionLabel>Development Process</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight mb-3">How I Work</h2>
-          <p className="text-slate-400 text-[1.05rem] max-w-lg">A proven, structured approach that ensures every project ships on time, on budget, and exceeds expectations.</p>
+          <p className="text-slate-600 dark:text-slate-400 text-[1.05rem] max-w-lg">A proven, structured approach that ensures every project ships on time, on budget, and exceeds expectations.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -29,7 +29,7 @@ export default function Process() {
               </span>
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-primary/15 to-brand-accent/15 border border-orange-500/20 flex items-center justify-center text-2xl mb-5">{s.icon}</div>
               <h3 className="text-[1.05rem] font-bold mb-2">{s.title}</h3>
-              <p className="text-slate-400 text-[0.875rem] leading-relaxed">{s.desc}</p>
+              <p className="text-slate-600 dark:text-slate-400 text-[0.875rem] leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </div>

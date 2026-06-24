@@ -18,7 +18,7 @@ export default function Projects() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <SectionLabel>Featured Projects</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight mb-3">Work That Speaks</h2>
-          <p className="text-slate-400 text-[1.05rem] max-w-lg">A selection showcasing AI systems, SaaS platforms, and developer tools.</p>
+          <p className="text-slate-600 dark:text-slate-400 text-[1.05rem] max-w-lg">A selection showcasing AI systems, SaaS platforms, and developer tools.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 mt-12">
@@ -47,10 +47,10 @@ export default function Projects() {
                   ))}
                 </div>
                 <h3 className="text-[1.1rem] font-bold mb-2 tracking-tight">{p.title}</h3>
-                <p className="text-slate-400 text-[0.875rem] leading-relaxed mb-4">{p.desc}</p>
+                <p className="text-slate-600 dark:text-slate-400 text-[0.875rem] leading-relaxed mb-4">{p.desc}</p>
                 <div className="flex flex-wrap gap-1.5 mb-5">
                   {p.techStack.map((tech) => (
-                    <span key={tech} className="text-[0.6rem] font-mono font-bold bg-white/[0.04] dark:bg-white/[0.06] border border-white/10 dark:border-white/10 text-slate-500 dark:text-slate-400 px-2 py-0.5 rounded">
+                    <span key={tech} className="text-[0.6rem] font-mono font-bold bg-slate-100 border border-slate-200 text-slate-600 dark:bg-white/[0.06] dark:border-white/10 dark:text-slate-400 px-2 py-0.5 rounded">
                       {tech}
                     </span>
                   ))}

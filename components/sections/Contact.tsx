@@ -7,10 +7,8 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { GradientText } from "@/components/ui/GradientText";
 
 const socials = [
-  { icon: "📧", label: "sundaram.dev@gmail.com",          href: "mailto:sundaram.dev@gmail.com" },
+  { icon: "📧", label: "sundramsharma6@gmail.com",          href: "mailto:sundramsharma6@gmail.com" },
   { icon: "🐙", label: "github.com/Sundaram6",                href: "https://github.com/Sundaram6" },
-  { icon: "💼", label: "linkedin.com/in/sundaram-sharma", href: "https://linkedin.com/in/sundaram-sharma" },
-  { icon: "✖",  label: "@sundaram_dev",                   href: "https://twitter.com/sundaram_dev" },
 ];
 
 export default function Contact() {
@@ -30,7 +28,7 @@ export default function Contact() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight mb-4">
             Let's Build Something <GradientText>Extraordinary</GradientText>
           </h2>
-          <p className="text-slate-400 text-[1.05rem]">Have a project in mind? I'd love to hear about it. Response time: under 24 hours.</p>
+          <p className="text-slate-600 dark:text-slate-400 text-[1.05rem]">Have a project in mind? I'd love to hear about it. Response time: under 24 hours.</p>
           <div className="inline-flex items-center gap-2 mt-5 bg-green-500/10 border border-green-500/25 text-green-400 px-4 py-2 rounded-full text-xs font-semibold">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80] animate-[blink_2s_infinite]" />
             Currently accepting new clients
@@ -41,7 +39,7 @@ export default function Contact() {
           {/* Info */}
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <h3 className="text-2xl font-extrabold tracking-tight mb-4">Ready to start?</h3>
-            <p className="text-slate-400 leading-relaxed mb-8 text-[0.975rem]">Whether you need a complete product built from scratch, an AI integration, or a performance overhaul — I've got you covered.</p>
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 text-[0.975rem]">Whether you need a complete product built from scratch, an AI integration, or a performance overhaul — I've got you covered.</p>
             <div className="flex flex-col gap-3">
               {socials.map((s) => (
                 <Link key={s.label} href={s.href} target="_blank"
@@ -60,24 +58,24 @@ export default function Contact() {
                 const [label, type, ph] = f.split("|");
                 return (
                   <div key={label} className="mb-5">
-                    <label className="block text-[0.75rem] font-semibold text-slate-400 uppercase tracking-widest mb-2">{label}</label>
+                    <label className="block text-[0.75rem] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-2">{label}</label>
                     <input type={type} placeholder={ph}
-                      className="w-full bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600" />
+                      className="w-full bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all placeholder:text-slate-600 dark:text-slate-400 dark:placeholder:text-slate-600" />
                   </div>
                 );
               })}
               <div className="mb-5">
-                <label className="block text-[0.75rem] font-semibold text-slate-400 uppercase tracking-widest mb-2">Project Type</label>
-                <select className="w-full bg-slate-50 dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 focus:border-brand-primary rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all">
+                <label className="block text-[0.75rem] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-2">Project Type</label>
+                <select className="w-full bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 focus:border-brand-primary rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all">
                   {["Select a service…","AI Application","SaaS Product","Web Development","Automation System","Consulting"].map((o) => (
                     <option key={o}>{o}</option>
                   ))}
                 </select>
               </div>
               <div className="mb-6">
-                <label className="block text-[0.75rem] font-semibold text-slate-400 uppercase tracking-widest mb-2">Message</label>
+                <label className="block text-[0.75rem] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-2">Message</label>
                 <textarea rows={4} placeholder="Describe your project, goals, and timeline…"
-                  className="w-full bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all resize-y placeholder:text-slate-400 dark:placeholder:text-slate-600" />
+                  className="w-full bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all resize-y placeholder:text-slate-600 dark:text-slate-400 dark:placeholder:text-slate-600" />
               </div>
               <button
                 onClick={handleSubmit}

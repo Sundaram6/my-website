@@ -55,7 +55,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <button 
             onClick={() => setIsGameOpen(true)}
-            className="p-2 text-slate-400 hover:text-brand-primary transition-colors focus:outline-none"
+            className="p-2 text-slate-600 dark:text-slate-400 hover:text-brand-primary transition-colors focus:outline-none"
             title="Play Flappy Dev"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
@@ -82,7 +82,7 @@ export default function Navbar() {
           aria-label="Open menu"
         >
           {[0, 1, 2].map((i) => (
-            <span key={i} className="w-5.5 h-0.5 bg-white rounded-full block" />
+            <span key={i} className="w-5.5 h-0.5 bg-slate-900 dark:bg-white rounded-full block" />
           ))}
         </button>
       </motion.nav>

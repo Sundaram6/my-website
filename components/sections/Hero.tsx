@@ -48,7 +48,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-[clamp(1rem,2vw,1.25rem)] text-slate-400 max-w-xl mx-auto leading-relaxed mb-12"
+          className="text-[clamp(1rem,2vw,1.25rem)] text-slate-600 dark:text-slate-400 max-w-xl mx-auto leading-relaxed mb-12"
         >
           Full Stack Developer crafting AI-powered applications, scalable SaaS
           platforms, and beautiful digital experiences that drive real business results.
@@ -83,16 +83,10 @@ export default function Hero() {
           {stats.map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-[2.2rem] font-extrabold gradient-text tracking-tight">{s.num}</div>
-              <div className="text-[0.75rem] text-slate-500 uppercase tracking-[0.08em] mt-1 font-medium">{s.label}</div>
+              <div className="text-[0.75rem] text-slate-700 dark:text-slate-500 uppercase tracking-[0.08em] mt-1 font-medium">{s.label}</div>
             </div>
           ))}
         </motion.div>
-      </div>
-
-      {/* Scroll hint */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600 text-xs">
-        <span>Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-brand-primary to-transparent animate-[scrollLine_1.5s_ease-in-out_infinite]" />
       </div>
     </section>
   );

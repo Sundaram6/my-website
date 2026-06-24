@@ -31,6 +31,12 @@ body {
   overflow-x: hidden;
 }
 
+.light body {
+  background: radial-gradient(circle at 15% 50%, rgba(255, 240, 230, 0.5), transparent 25%),
+              radial-gradient(circle at 85% 30%, rgba(230, 240, 255, 0.5), transparent 25%);
+  background-color: #f8fafc;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #1a1a1a; }
@@ -49,6 +55,10 @@ body::before {
   z-index: 0;
 }
 
+.light body::before {
+  opacity: 0.05;
+}
+
 @layer utilities {
   .gradient-text {
     background: linear-gradient(135deg, #ffb380 0%, #ffc699 50%, #ff9d66 100%);
@@ -61,14 +71,16 @@ body::before {
     @apply bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl;
   }
   .light .glass {
-    @apply bg-white/60 border-slate-200/50 shadow-sm backdrop-blur-xl;
+    @apply bg-white/95 border-slate-200 shadow-sm backdrop-blur-xl;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
   }
   
   .glass2 {
     @apply bg-[#111] border border-white/10 backdrop-blur-md shadow-2xl;
   }
   .light .glass2 {
-    @apply bg-white border-slate-200 shadow-xl text-slate-900;
+    @apply bg-white border-slate-200/60 shadow-2xl text-slate-800;
+    box-shadow: 0 25px 50px -12px rgba(255, 157, 102, 0.1);
   }
 
   .glow-border {

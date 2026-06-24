@@ -19,14 +19,11 @@ export default function ResumePage() {
           <h2 className="text-xl font-medium text-brand-primary mb-4">Senior AI / Full Stack Engineer</h2>
           
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
-            <a href="mailto:sundaram.dev@gmail.com" className="flex items-center gap-1 hover:text-brand-primary transition-colors">
-              <span aria-hidden="true">✉</span> sundaram.dev@gmail.com
+            <a href="mailto:sundramsharma6@gmail.com" className="flex items-center gap-1 hover:text-brand-primary transition-colors">
+              <span aria-hidden="true">✉</span> sundramsharma6@gmail.com
             </a>
             <a href="https://github.com/Sundaram6" target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:text-brand-primary transition-colors">
               <span aria-hidden="true">🐙</span> github.com/Sundaram6
-            </a>
-            <a href="https://linkedin.com/in/sundaram-sharma" target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:text-brand-primary transition-colors">
-              <span aria-hidden="true">💼</span> linkedin.com/in/sundaram-sharma
             </a>
             <span className="flex items-center gap-1">
               <span aria-hidden="true">📍</span> Remote / Global

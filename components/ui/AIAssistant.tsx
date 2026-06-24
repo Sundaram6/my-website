@@ -37,7 +37,7 @@ export function AIAssistant() {
               <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
               <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
               <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
-              <span className="ml-2 text-[0.65rem] font-bold tracking-[0.2em] text-slate-400">AI_TERMINAL</span>
+              <span className="ml-2 text-[0.65rem] font-bold tracking-[0.2em] text-slate-600 dark:text-slate-400">AI_TERMINAL</span>
             </div>
             <div className="font-mono text-xs text-[#00ff41] leading-relaxed min-h-[120px] whitespace-pre-wrap">
               {text}

@@ -10,7 +10,7 @@ export default function TechStack() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <SectionLabel>Tech Stack</SectionLabel>
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight mb-3">Tools I Build With</h2>
-          <p className="text-slate-400 text-[1.05rem] max-w-lg">A curated set of battle-tested technologies I use to ship fast, scalable, and beautiful products.</p>
+          <p className="text-slate-600 dark:text-slate-400 text-[1.05rem] max-w-lg">A curated set of battle-tested technologies I use to ship fast, scalable, and beautiful products.</p>
         </motion.div>
 
         <div className="grid grid-cols-[repeat(auto-fill,minmax(130px,1fr))] gap-4 mt-12">
@@ -28,7 +28,7 @@ export default function TechStack() {
               <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="w-10 h-10 rounded-lg flex items-center justify-center text-xs font-bold text-white mb-2 relative mx-auto" style={{ backgroundColor: t.color }}>{t.icon}</div>
               <div className="text-xs font-semibold text-slate-700 dark:text-slate-300 relative">{t.name}</div>
-              <div className="text-[0.65rem] text-slate-500 dark:text-slate-400 mt-0.5 relative">{t.cat}</div>
+              <div className="text-[0.65rem] text-slate-700 dark:text-slate-500 dark:text-slate-400 mt-0.5 relative">{t.cat}</div>
             </motion.div>
           ))}
         </div>
