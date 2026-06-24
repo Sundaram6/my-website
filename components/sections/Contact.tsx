@@ -14,10 +14,37 @@ const socials = [
 export default function Contact() {
   const [status, setStatus] = useState<"idle"|"loading"|"sent">("idle");
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setStatus("loading");
-    setTimeout(() => setStatus("sent"), 1500);
-    setTimeout(() => setStatus("idle"), 5000);
+    
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus("sent");
+        e.currentTarget.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("idle");
+        // FormSubmit's activation notice or other errors will be surfaced here
+        alert(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setStatus("idle");
+      alert("Network error. Please try again.");
+    }
   };
 
   return (
@@ -54,31 +81,34 @@ export default function Contact() {
           {/* Form */}
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
             <GlassCard className="p-8" glow>
-              {(["Your Name|text|John Smith","Email Address|email|john@company.com"] as string[]).map((f) => {
-                const [label, type, ph] = f.split("|");
+              <form onSubmit={handleSubmit}>
+                <input type="hidden" name="_subject" value="New Portfolio Contact Submission!" />
+                <input type="hidden" name="_captcha" value="false" />
+              {(["Your Name|text|John Smith|name","Email Address|email|john@company.com|email"] as string[]).map((f) => {
+                const [label, type, ph, name] = f.split("|");
                 return (
                   <div key={label} className="mb-5">
                     <label className="block text-[0.75rem] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-2">{label}</label>
-                    <input type={type} placeholder={ph}
+                    <input type={type} placeholder={ph} name={name} required
                       className="w-full bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all placeholder:text-slate-600 dark:text-slate-400 dark:placeholder:text-slate-600" />
                   </div>
                 );
               })}
               <div className="mb-5">
                 <label className="block text-[0.75rem] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-2">Project Type</label>
-                <select className="w-full bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 focus:border-brand-primary rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all">
+                <select name="projectType" className="w-full bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 focus:border-brand-primary rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all">
                   {["Select a service…","AI Application","SaaS Product","Web Development","Automation System","Consulting"].map((o) => (
-                    <option key={o}>{o}</option>
+                    <option key={o} value={o}>{o}</option>
                   ))}
                 </select>
               </div>
               <div className="mb-6">
                 <label className="block text-[0.75rem] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-2">Message</label>
-                <textarea rows={4} placeholder="Describe your project, goals, and timeline…"
+                <textarea rows={4} name="message" required placeholder="Describe your project, goals, and timeline…"
                   className="w-full bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(255,157,102,0.1)] rounded-lg px-4 py-3.5 text-[0.9rem] text-slate-900 dark:text-white outline-none transition-all resize-y placeholder:text-slate-600 dark:text-slate-400 dark:placeholder:text-slate-600" />
               </div>
               <button
-                onClick={handleSubmit}
+                type="submit"
                 disabled={status !== "idle"}
                 className={`w-full py-4 rounded-xl font-bold text-[0.95rem] tracking-wide transition-all ${
                   status === "sent"
@@ -90,6 +120,7 @@ export default function Contact() {
                 {status === "loading" && "Sending…"}
                 {status === "sent" && "✓ Message Sent!"}
               </button>
+              </form>
             </GlassCard>
           </motion.div>
         </div>
