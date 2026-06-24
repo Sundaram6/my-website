@@ -84,6 +84,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit}>
                 <input type="hidden" name="_subject" value="New Portfolio Contact Submission!" />
                 <input type="hidden" name="_captcha" value="false" />
+                <input type="text" name="_honeypot" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
               {(["Your Name|text|John Smith|name","Email Address|email|john@company.com|email"] as string[]).map((f) => {
                 const [label, type, ph, name] = f.split("|");
                 return (

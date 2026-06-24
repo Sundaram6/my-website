@@ -4,6 +4,12 @@ export async function POST(request: Request) {
   try {
     const data = await request.json();
     
+    // Honeypot Check: If the hidden _honeypot field is filled, it's a bot.
+    // We return a fake 200 OK to silently trick the spam bot.
+    if (data._honeypot) {
+      return NextResponse.json({ success: true, message: "Message sent!" });
+    }
+    
     // We proxy the request from the Next.js server to bypass browser CORS and AdBlockers.
     const response = await fetch("https://formsubmit.co/ajax/sundramsharma6@gmail.com", {
       method: "POST",
