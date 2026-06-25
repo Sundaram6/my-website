@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { GradientText } from "@/components/ui/GradientText";
@@ -81,6 +82,16 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-16 items-start mt-10">
           {/* Info */}
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <div className="flex items-center gap-4 mb-6 p-4 glass border border-orange-500/20 rounded-2xl w-fit shadow-[0_4px_20px_rgba(255,157,102,0.1)]">
+              <Image src="/sundaram-profile.jpg" width={56} height={56} className="rounded-full border-2 border-brand-primary shadow-[0_0_15px_rgba(255,157,102,0.3)] object-cover" alt="Sundaram Sharma" />
+              <div>
+                <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
+                  Sundaram is Online
+                </div>
+                <div className="text-[0.75rem] text-slate-500 dark:text-slate-400 font-medium mt-0.5">Typically replies in &lt; 2 hours</div>
+              </div>
+            </div>
             <h3 className="text-2xl font-extrabold tracking-tight mb-4">Ready to start?</h3>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 text-[0.975rem]">Whether you need a complete product built from scratch, an AI integration, or a performance overhaul — I've got you covered.</p>
             <div className="flex flex-col gap-3">
