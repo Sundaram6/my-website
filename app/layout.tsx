@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sundaramsharma.dev"),
+  metadataBase: new URL("https://buildwithsundaram.vercel.app"),
   title: "Sundaram Sharma — Full Stack AI Developer",
   description:
     "Full Stack Developer specializing in AI applications, automation systems, SaaS products, and modern web development.",
