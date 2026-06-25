@@ -61,16 +61,16 @@ export default function Hero() {
           className="flex gap-4 justify-center flex-wrap"
         >
           <Link href="#projects"
-            className="bg-gradient-to-r from-brand-primary to-brand-accent text-white px-9 py-3.5 rounded-xl font-semibold text-[0.95rem] hover:-translate-y-0.5 hover:shadow-[0_8px_35px_rgba(255,157,102,0.45)] transition-all">
+            className="bg-gradient-to-r from-brand-primary to-brand-accent text-white px-9 py-3.5 rounded-xl font-semibold text-[0.95rem] hover:scale-105 active:scale-95 hover:shadow-[0_8px_35px_rgba(255,157,102,0.5)] transition-all duration-300">
             View My Work
           </Link>
           <Link href="#contact"
-            className="glass2 text-slate-900 dark:text-white px-9 py-3.5 rounded-xl font-semibold text-[0.95rem] backdrop-blur-xl hover:border-orange-500/30 hover:-translate-y-0.5 transition-all">
+            className="glass2 text-slate-900 dark:text-white px-9 py-3.5 rounded-xl font-semibold text-[0.95rem] backdrop-blur-xl hover:border-orange-500/40 hover:scale-105 active:scale-95 hover:shadow-[0_0_20px_rgba(255,157,102,0.15)] transition-all duration-300">
             Let's Talk
           </Link>
           <Link href="/resume"
-            className="glass2 text-slate-900 dark:text-white px-9 py-3.5 rounded-xl font-semibold text-[0.95rem] backdrop-blur-xl hover:border-orange-500/30 hover:-translate-y-0.5 transition-all flex items-center gap-2">
-            Resume <span aria-hidden="true">↓</span>
+            className="glass2 text-slate-900 dark:text-white px-9 py-3.5 rounded-xl font-semibold text-[0.95rem] backdrop-blur-xl hover:border-orange-500/40 hover:scale-105 active:scale-95 hover:shadow-[0_0_20px_rgba(255,157,102,0.15)] transition-all duration-300 flex items-center gap-2">
+            Resume <span aria-hidden="true" className="group-hover:translate-y-0.5 transition-transform">↓</span>
           </Link>
         </motion.div>
 
