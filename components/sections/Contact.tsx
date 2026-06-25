@@ -18,13 +18,14 @@ export default function Contact() {
     e.preventDefault();
     setStatus("loading");
     
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
     // Client-side Honeypot Check: silently trick the bot
     if (data._honeypot) {
       setStatus("sent");
-      e.currentTarget.reset();
+      form.reset();
       setTimeout(() => setStatus("idle"), 5000);
       return;
     }
@@ -49,7 +50,7 @@ export default function Contact() {
 
       if (response.ok && result.success !== "false" && result.success !== false) {
         setStatus("sent");
-        e.currentTarget.reset();
+        form.reset();
         setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("idle");
