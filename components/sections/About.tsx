@@ -19,7 +19,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
         >
           <GlassCard className="p-8" glow>
-            <Image src="/sundaram-profile.jpg" width={120} height={120} alt="Sundaram Sharma" className="rounded-2xl border border-white/20 shadow-[0_8px_30px_rgba(255,157,102,0.3)] object-cover grayscale hover:grayscale-0 transition-all duration-500 mb-6" />
+            <Image src="/sundaram-profile.jpg" width={120} height={120} alt="Sundaram Sharma" className="rounded-2xl border border-white/20 shadow-[0_8px_30px_rgba(255,157,102,0.3)] object-cover mb-6" />
             <h3 className="text-xl font-bold mb-1">Sundaram Sharma</h3>
             <p className="text-brand-primary2 text-sm font-semibold mb-4">Full Stack &amp; AI Engineer</p>
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Building at the intersection of AI and product — from zero-to-one SaaS products to intelligent automation systems that scale.</p>
